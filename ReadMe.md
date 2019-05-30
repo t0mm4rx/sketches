@@ -15,3 +15,4 @@ The default sketch is a 800x800 pixels with a (50, 50, 70) background.
 * [fractal_rectangle](https://t0mm4rx.github.io/sketches/sketch_fractal_rectangle)
 * [fractal_circle](https://t0mm4rx.github.io/sketches/sketch_fractal_circle)
 * [tunnel](https://t0mm4rx.github.io/sketches/sketch_tunnel)
+* [fractal_triangle](https://t0mm4rx.github.io/sketches/sketch_fractal_triangle)
