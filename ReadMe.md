@@ -1,5 +1,7 @@
 # Sketches
 
+[Live demo](https://t0mm4rx.github.io/sketches/)
+
 This repo is a folder where I store all my small p5.js experiments.
 
 You can generate a new sketch with :
