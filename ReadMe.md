@@ -7,5 +7,5 @@ You can generate a new sketch with :
 ./new.sh <sketch_name>
 ```
 
-The default sketch is a 600x600 pixels with a (50, 50, 70) background.
+The default sketch is a 800x800 pixels with a (50, 50, 70) background.
 * [fractal_tree](https://t0mm4rx.github.io/sketches/sketch_fractal_tree)
