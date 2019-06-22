@@ -21,14 +21,14 @@ function draw() {
 	for (var x = 0; x < GRID_SIZE; x++) {
 		for (var y = 0; y < GRID_SIZE; y++) {
 			if (grid[x][y] != 0) {
-				fill(255 - grid[x][y] ** 2 * 10, 70, max(grid[x][y] ** 2 * 10, 210));
+				fill(255 - grid[x][y] ** 2 * 20, min(10 + grid[x][y] * 10, 100), min(150 + grid[x][y] ** 2 * 10, 210));
 				rect(x * PIXEL_SIZE, y * PIXEL_SIZE, PIXEL_SIZE, PIXEL_SIZE);
 			}
 		}
 	}
 
 	if (speed != 0) {
-		if (Date.now() - last_update >= (10-speed)*100) {
+		if (Date.now() - last_update >= (10-speed)*50) {
 			last_update = Date.now();
 			let ngrid = get_empty_grid();
 			for (var x = 0; x < GRID_SIZE; x++) {
@@ -55,6 +55,9 @@ function draw() {
 			grid = ngrid;
 		}
 	}
+
+	fill(240);
+	text(count_cells() + " cells alive", 5, 15);
 
 }
 
@@ -99,4 +102,15 @@ function mousePressed() {
 	} else {
 		grid[safe_coords(nx)][safe_coords(ny)] = 1;
 	}
+}
+
+function count_cells() {
+	let s = 0;
+	for (var x = 0; x < GRID_SIZE; x++) {
+		for (var y = 0; y < GRID_SIZE; y++) {
+			if (grid[x][y] != 0)
+				s++;
+		}
+	}
+	return s;
 }
