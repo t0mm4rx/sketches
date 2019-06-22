@@ -3,6 +3,7 @@ const GRID_SIZE = 100;
 const PIXEL_SIZE = 8;
 var speed = 0;
 var last_update = null;
+var max_cells = 0;
 
 function setup() {
 	createCanvas(800, 800);
@@ -55,9 +56,10 @@ function draw() {
 			grid = ngrid;
 		}
 	}
-
+	max_cells = max(max_cells, count_cells());
 	fill(240);
 	text(count_cells() + " cells alive", 5, 15);
+	text(max_cells + " cells max", 5, 25);
 
 }
 
@@ -95,12 +97,14 @@ function safe_coords(x) {
 }
 
 function mousePressed() {
-	let nx = Math.floor(mouseX / PIXEL_SIZE);
-	let ny = Math.floor(mouseY / PIXEL_SIZE);
-	if (grid[safe_coords(nx)][safe_coords(ny)] != 0) {
-		grid[safe_coords(nx)][safe_coords(ny)] = 0;
-	} else {
-		grid[safe_coords(nx)][safe_coords(ny)] = 1;
+	if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
+		let nx = Math.floor(mouseX / PIXEL_SIZE);
+		let ny = Math.floor(mouseY / PIXEL_SIZE);
+		if (grid[safe_coords(nx)][safe_coords(ny)] != 0) {
+			grid[safe_coords(nx)][safe_coords(ny)] = 0;
+		} else {
+			grid[safe_coords(nx)][safe_coords(ny)] = 1;
+		}
 	}
 }
 

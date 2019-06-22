@@ -30,7 +30,6 @@ function draw() {
   }
 
   shapes = shapes.filter(shape => !shape.toDelete)
-  console.log(frameRate())
 
   z+=SPEED
 
