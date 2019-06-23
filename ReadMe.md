@@ -18,3 +18,4 @@ The default sketch is a 800x800 pixels with a (50, 50, 70) background.
 * [fractal_triangle](https://t0mm4rx.github.io/sketches/sketch_fractal_triangle)
 * [game_of_life](https://t0mm4rx.github.io/sketches/sketch_game_of_life)
 * [game_of_life_control](https://t0mm4rx.github.io/sketches/sketch_game_of_life_control)
+* [chaos_game](https://t0mm4rx.github.io/sketches/sketch_chaos_game)
