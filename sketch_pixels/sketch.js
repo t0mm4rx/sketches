@@ -5,7 +5,7 @@ const REDUCTION = 10;
 const SPEED = 0.1;
 
 function preload() {
-    image = loadImage("image6.jpeg");
+    image = loadImage("image" + floor(random(6)) + ".jpeg");
 	data = [];
 }
 
