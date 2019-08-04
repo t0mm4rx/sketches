@@ -21,3 +21,4 @@ The default sketch is a 800x800 pixels with a (50, 50, 70) background.
 * [chaos_game](https://t0mm4rx.github.io/sketches/sketch_chaos_game/)
 * [chaos_equations](https://t0mm4rx.github.io/sketches/sketch_chaos_equations/)
 * [pixels](https://t0mm4rx.github.io/sketches/sketch_pixels/)
+* [circle](https://t0mm4rx.github.io/sketches/sketch_circle/)
