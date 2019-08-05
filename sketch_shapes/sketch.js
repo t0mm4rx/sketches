@@ -1,6 +1,12 @@
-const ITERS = 400;
-const SIZE = 50;
+const ITERS = 1000;
+const SIZE = 40;
 const MAX_VERTICES = 100;
+var grain_texture;
+
+function preload()
+{
+	grain_texture = loadImage("grain.jpg");
+}
 
 function setup() {
 	createCanvas(800, 800);
@@ -28,5 +34,19 @@ function gen()
 		}
 		endShape(CLOSE);
 	}
+	tint(255, 30);
+	image(grain_texture, 0, 0);
+	draw_vignette();
 	setTimeout(gen, 1500);
+}
+
+function draw_vignette()
+{
+	noFill();
+	ellipseMode(CENTER);
+	for (var i = 0; i < width * 1.5; i++)
+	{
+		stroke(0, 0, 0, i / (width * 2.7) * 255);
+		ellipse(width / 2, height / 2, i, i);
+	}
 }
