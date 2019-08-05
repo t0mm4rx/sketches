@@ -22,3 +22,4 @@ The default sketch is a 800x800 pixels with a (50, 50, 70) background.
 * [chaos_equations](https://t0mm4rx.github.io/sketches/sketch_chaos_equations/)
 * [pixels](https://t0mm4rx.github.io/sketches/sketch_pixels/)
 * [circle](https://t0mm4rx.github.io/sketches/sketch_circle/)
+* [triangles](https://t0mm4rx.github.io/sketches/sketch_triangles/)
