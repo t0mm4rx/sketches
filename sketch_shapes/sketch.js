@@ -1,6 +1,7 @@
-const ITERS = 1000;
-const SIZE = 40;
-const MAX_VERTICES = 100;
+const ITERS = 2000;
+const SIZE = 50;
+const MAX_VERTICES = 20;
+const COLOR_VARIATION = 0;
 var grain_texture;
 
 function preload()
@@ -22,7 +23,8 @@ function gen()
 	ellipseMode(CENTER);
 	for (let _ = 0; _ < ITERS; _++)
 	{
-		fill(random(255));
+		let lightness = 55 + random(200);
+		fill(lightness + random(-COLOR_VARIATION, COLOR_VARIATION), lightness + random(-COLOR_VARIATION, COLOR_VARIATION), lightness + random(-COLOR_VARIATION, COLOR_VARIATION));
 		let vertices_n = random(3, MAX_VERTICES);
 		let origin = createVector(random(width), random(height));
 		beginShape();
@@ -34,6 +36,8 @@ function gen()
 		}
 		endShape(CLOSE);
 	}
+	filter(BLUR, .8);
+	filter(DILATE);
 	tint(255, 30);
 	image(grain_texture, 0, 0);
 	draw_vignette();
@@ -46,7 +50,7 @@ function draw_vignette()
 	ellipseMode(CENTER);
 	for (var i = 0; i < width * 1.5; i++)
 	{
-		stroke(0, 0, 0, i / (width * 2.7) * 255);
+		stroke(0, 0, 0, i / (width * 3) * 255);
 		ellipse(width / 2, height / 2, i, i);
 	}
 }
