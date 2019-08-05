@@ -1,7 +1,7 @@
 const ITERS = 2000;
 const SIZE = 50;
 const MAX_VERTICES = 20;
-const COLOR_VARIATION = 0;
+const COLOR_VARIATION = 20;
 var grain_texture;
 
 function preload()
