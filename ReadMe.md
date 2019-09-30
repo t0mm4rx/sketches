@@ -25,3 +25,5 @@ The default sketch is a 800x800 pixels with a (50, 50, 70) background.
 * [triangles](https://t0mm4rx.github.io/sketches/sketch_triangles/)
 * [shapes](https://t0mm4rx.github.io/sketches/sketch_shapes/)
 * [polygons](https://t0mm4rx.github.io/sketches/sketch_polygons/)
+* [pi_animation](https://t0mm4rx.github.io/sketches/sketch_pi_animation/)
+* [pi_sequence](https://t0mm4rx.github.io/sketches/sketch_pi_sequence/)
