@@ -6,9 +6,11 @@ const MARGIN_START = 260;
 
 function setup() {
 	createCanvas(800, 800);
+	this.canvas.style.cursor = "none";
 }
 
 function draw() {
+	blendMode(BLEND);
 	background(0);
 	strokeWeight(3);
 	stroke(255);
@@ -28,4 +30,9 @@ function draw() {
 			);
 		}
 	}
+	blendMode(DIFFERENCE);
+	ellipseMode(CENTER, CENTER);
+	fill(255);
+	noStroke();
+	ellipse(mouseX, mouseY, 20, 20);
 }
