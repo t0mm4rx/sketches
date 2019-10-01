@@ -29,3 +29,4 @@ The default sketch is a 800x800 pixels with a (50, 50, 70) background.
 * [pi_sequence](https://t0mm4rx.github.io/sketches/sketch_pi_sequence/)
 * [perlin_landscape](https://t0mm4rx.github.io/sketches/sketch_perlin_landscape/)
 * [perlin_lines](https://t0mm4rx.github.io/sketches/sketch_perlin_lines/)
+* [perlin_circle](https://t0mm4rx.github.io/sketches/sketch_perlin_circle/)
