@@ -6,9 +6,11 @@ const NOISE_REDUCTION = 0.005;
 
 function setup() {
 	createCanvas(800, 800);
+	this.canvas.style.cursor = "none";
 }
 
 function draw() {
+	blendMode(BLEND);
 	background(0);
 	stroke(255);
 	strokeWeight(3);
@@ -24,4 +26,9 @@ function draw() {
 		}
 	}
 
+	blendMode(DIFFERENCE);
+	ellipseMode(CENTER, CENTER);
+	fill(255);
+	noStroke();
+	ellipse(mouseX, mouseY, 20, 20);
 }
