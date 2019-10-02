@@ -10,8 +10,8 @@ function preload() {
 }
 
 function setup() {
-	frameRate(4);
 	createCanvas(800, 800);
+	this.canvas.style.cursor = "none";
 	graph = createGraphics(800, 800);
 	graph2 = createGraphics(800, 800);
 	graph.textFont(font);
@@ -38,6 +38,7 @@ function setup() {
 }
 
 function draw() {
+	blendMode(BLEND);
 	background(0);
 	graph2.strokeWeight(1);
 	graph2.stroke(255, 255, 255, 20);
@@ -64,4 +65,10 @@ function draw() {
 	image(graph, 0, 0);
 	graph.clear();
 	current++;
+
+	blendMode(DIFFERENCE);
+	ellipseMode(CENTER, CENTER);
+	fill(255);
+	noStroke();
+	ellipse(mouseX, mouseY, 20, 20);
 }
