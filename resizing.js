@@ -1,5 +1,8 @@
 window.onload = () => {
 	const canvas = document.querySelector('canvas');
+	if (!canvas) {
+		return setTimeout(() => window.onload(), 100);
+	}
 	const box = canvas.getBoundingClientRect();
 	const size = window.location.hash.substring(1).split('x').map(str => parseInt(str));
 	if (!size) {
