@@ -2,7 +2,9 @@ window.onload = () => {
 	const canvas = document.querySelector('canvas');
 	const box = canvas.getBoundingClientRect();
 	const size = window.location.hash.substring(1).split('x').map(str => parseInt(str));
-	console.log(size);
+	if (!size) {
+		return;
+	}
 	const scale = Math.min(
   	size[0] / box.width,
   	size[1] / box.height
