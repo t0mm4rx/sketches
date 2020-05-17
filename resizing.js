@@ -1,9 +1,11 @@
 window.onload = () => {
 	const canvas = document.querySelector('canvas');
 	const box = canvas.getBoundingClientRect();
+	const size = window.location.hash.substring(1).split('x').map(str => parseInt(str));
+	console.log(size);
 	const scale = Math.min(
-  	window.innerWidth / box.width,
-  	window.innerHeight / box.height
+  	size[0] / box.width,
+  	size[1] / box.height
 	);
 	if (scale < 1) {
 		canvas.style.transform = `scale(${scale})`;
