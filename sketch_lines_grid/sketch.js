@@ -1,7 +1,8 @@
 var font;
 const grid_size = 50;
 const line_width = 6;
-let grid = [];
+const perlin_reduction_factor = 10;
+const mouse_factor = 10;
 
 function preload() {
 	font = loadFont('../fonts/PlayfairDisplay-Regular.ttf');
@@ -11,8 +12,6 @@ function setup() {
 	createCanvas(800, 800);
 	this.canvas.style.cursor = 'none';
 	textFont(font);
-	// frameRate(1);
-	create_grid();
 }
 
 function draw() {
@@ -28,28 +27,17 @@ function draw() {
 	ellipse(mouseX, mouseY, 20, 20);
 }
 
-function create_grid()
-{
-	grid = [];
-	const choices = [0, 1, 2, 3];
-	for (let x = 0; x < width; x += grid_size)
-	{
-		let line = [];
-		for (let y = 0; y < width; y += grid_size)
-		{
-			line.push(random(choices));
-		}
-		grid.push(line);
-	}
-}
-
 function draw_grid()
 {
-	for (let x = 0; x < grid.length; x++)
+	for (let x = 0; x < floor(width / grid_size); x++)
 	{
-		for (let y = 0; y < grid[0].length; y++)
+		for (let y = 0; y < floor(height / grid_size); y++)
 		{
-			draw_case(x * grid_size, y * grid_size, grid[x][y]);
+			let value = noise(
+				x / perlin_reduction_factor,
+				y / perlin_reduction_factor);
+			value = parseInt(floor(value * 4));
+			draw_case(x * grid_size, y * grid_size, value);
 		}
 	}
 }
